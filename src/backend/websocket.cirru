@@ -15,7 +15,7 @@ var connectHandler $ \ (socket)
 
   socket.on :close $ \ ()
     exports.out.send $ {}
-      :type :state/disconect
+      :type :state/disconnect
       :stateId id
 
   socket.on :message $ \ (rawData)

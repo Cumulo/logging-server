@@ -10,14 +10,14 @@ var
 
 require :origami-ui
 
-websocket.out.forward store.in
-store.out.forward page.in
-view.out.forward websocket.in
-
-websocket.setup $ {} (:port 4003)
-
 websocket.out.for $ \ (data)
   console.info :websocket.out $ JSON.stringify (data.toJS)
 
 store.out.for $ \ (data)
   console.info :store.out $ JSON.stringify (data.toJS)
+
+websocket.out.forward store.in
+store.out.forward page.in
+view.out.forward websocket.in
+
+websocket.setup $ {} (:port 4003)

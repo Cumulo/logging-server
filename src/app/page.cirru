@@ -4,8 +4,8 @@ var
   Pipeline $ require :cumulo-pipeline
 
 var
-  view $ require :./frontend/view
-  schema $ require :../backbone/schema
+  view $ require :../frontend/view
+  schema $ require :../backend/schema
 
 = exports.in $ new Pipeline
 

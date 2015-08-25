@@ -3,6 +3,7 @@ var
   todo $ require :./todo
 
 = module.exports $ \ (db actionType actionData)
+
   case actionType
     :todo/add $ todo.add db actionData
     :todo/update $ todo.update db actionData

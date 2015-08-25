@@ -3,7 +3,7 @@ var
   Immutable $ require :immutable
 
 = exports.database $ Immutable.fromJS $ {}
-  :isDebugging true
+  :isTravelling true
   :pointer -1
   :records (array)
   :initial (array)

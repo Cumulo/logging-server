@@ -15,16 +15,19 @@ var
   ... db
     set :records $ Immutable.List
     set :intial newStore
+    set :isTravelling false
 
 = exports.reset $ \ (db actionData)
   ... db
     set :records $ Immutable.List
     set :pointer -1
+    set :isTravelling false
 
 = exports.peek $ \ (db actionData)
   var position actionData
   ... db
     set :pointer actionData
+    set :isTravelling true
 
 = exports.discard $ \ (db action)
   var position $ db.get :pointer

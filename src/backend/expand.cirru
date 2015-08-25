@@ -26,4 +26,4 @@ var
             \ (acc action)
               updater acc (action.get 0) (action.get 1)
             , initial
-      db.get :recorder
+      , recorder

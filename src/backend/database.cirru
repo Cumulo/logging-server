@@ -38,6 +38,8 @@ var _database schema.database
         stateController.connect db actionType actionData stateId
       :disconnect
         stateController.disconnect db actionType actionData stateId
+      :role
+        stateController.role db actionType actionData stateId
       else
         console.warn $ + ":Unknown action: " actionType
         , db

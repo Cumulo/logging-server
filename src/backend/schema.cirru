@@ -14,7 +14,9 @@ var
   :id null
   :role :user
 
-= exports.store $ Immutable.List
+= exports.store $ Immutable.Map $ {}
+  :role :
+  :store (array)
 
 = exports.task $ Immutable.fromJS $ {}
   :id null

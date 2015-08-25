@@ -13,4 +13,10 @@ var
 
 = exports.disconnect $ \ (db actionType actionData stateId)
   ... db
-    deleteIn ([] :state stateId)
+    deleteIn ([] :states stateId)
+
+= exports.role $ \ (db actionType actionData stateId)
+  ... db
+    updateIn ([] :states stateId) $ \ (aState)
+      aState.update :role $ \ (role)
+        cond (is role :user) :admin :user

@@ -9,4 +9,7 @@ var
 var _store $ Immutable.Map
 
 = exports.out $ exports.in.reduce _store $ \ (store diff)
-  patch store diff
+  -- console.log :patching (store.toJS) (diff.toJS)
+  var result $ patch store diff
+  -- console.log :result (result.toJS)
+  return result

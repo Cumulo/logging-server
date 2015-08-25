@@ -5,19 +5,22 @@ var
 
 var
   view $ require :../frontend/view
+  store $ require :../frontend/store
   schema $ require :../backend/schema
 
-= exports.in $ new Pipeline
+var
+  Container $ React.createFactory $ require :./container
 
 var
   div $ React.createFactory :div
 
-var pageComponent $ React.createClass $ {}
-  :displayName :app-page
+= exports.in $ new Pipeline
 
-  :render $ \ ()
-    div null :demo
+React.render
+  Container $ {} (:store schema.store)
+  , document.body
 
-var Page $ React.createFactory pageComponent
-
-React.render (Page) document.body
+exports.in.for $ \ (store)
+  React.render
+    Container $ {} (:store store)
+    , document.body

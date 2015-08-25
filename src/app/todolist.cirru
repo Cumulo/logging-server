@@ -33,5 +33,5 @@ var
         div
           {} (:className ":button is-attract") (:onClick this.onAdd)
           , :Add
-        div ({} (:className :todolist-table))
-          this.renderTasks
+      div ({} (:className :todolist-table))
+        this.renderTasks

@@ -1,0 +1,23 @@
+
+.app-controller {
+  padding: 10px;
+}
+
+.controller-header {
+  margin-bottom: 20px;
+}
+
+.app-record {
+  font-family: Consolas, monospace;
+  background-color: hsl(100,30%,30%);
+  color: white;
+  padding: 10px;
+  margin-bottom: 1px;
+}
+
+.record-type {}
+pre.record-data {
+  margin: 0 0 0 2em;
+  font-size: 13px;
+  line-height: 1.4em;
+}

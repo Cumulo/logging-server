@@ -20,25 +20,28 @@ var
   :onToggle $ \ ()
     view.action $ {}
       :type :todo/toggle
-      :data $ {}
+      :data $ this.props.task.get :id
 
   :onUpdate $ \ (event)
+    console.log event
     view.action $ {}
       :type :todo/update
       :data $ {}
+        :id $ this.props.task.get :id
+        :text event.target.value
 
   :onRemove $ \ ()
     view.action $ {}
       :type :todo/remove
-      :data $ {}
+      :data $ this.props.task.get :id
 
   :render $ \ ()
     var toggleClass $ classnames :task-toggle $ {}
-      :is-done $ this.props.get :done
+      :is-done $ this.props.task.get :done
 
-    div ({} (:className :app-task))
+    div ({} (:className ":app-task line"))
       div ({} (:className toggleClass) (:onClick this.onToggle))
-      input $ {} (:className :task-input) (:value $ this.props.get :text)
+      input $ {} (:className :task-input) (:value $ this.props.task.get :text)
         :onChange this.onUpdate
       div
         {} (:className ":task-remove button is-danger") (:onClick this.onRemove)

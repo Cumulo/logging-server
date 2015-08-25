@@ -20,6 +20,7 @@
     "gulp-cirru-script": "^0.1.1",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
+    "react-hot-loader": "^1.2.9",
     "rsyncwrapper": "^0.4.2",
     "run-sequence": "^1.0.2",
     "stir-template": "^0.1.4",

@@ -9,6 +9,7 @@ var
   websocket $ require :./frontend/websocket
 
 require :origami-ui
+require :../style/main.css
 
 websocket.out.for $ \ (data)
   console.info :websocket.out $ JSON.stringify (data.toJS)

@@ -4,7 +4,7 @@ var
 
 = exports.database $ Immutable.fromJS $ {}
   :recorder $ {}
-    :isTravelling true
+    :isTravelling false
     :pointer -1
     :records (array)
     :initial (array)
@@ -15,7 +15,7 @@ var
   :role :user
 
 = exports.store $ Immutable.Map $ {}
-  :role :
+  :role :user
   :store (array)
 
 = exports.task $ Immutable.fromJS $ {}

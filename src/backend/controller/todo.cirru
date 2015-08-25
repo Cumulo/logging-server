@@ -1,6 +1,9 @@
 
+var
+  schema $ require :../schema
+
 = exports.add $ \ (store actionData)
-  var newTask actionData
+  var newTask $ schema.task.merge actionData
   store.push newTask
 
 = exports.update $ \ (store actionData)

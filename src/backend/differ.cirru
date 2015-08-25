@@ -19,11 +19,11 @@ exports.in.for $ \ (db)
       _cache.get (aState.get :id)
       Immutable.Map
     var
-      contextChanged $ isnt
-        theCache.getIn $ [] :db :context
-        db.get :context
+      recorderChanged $ isnt
+        theCache.getIn $ [] :db :recorder
+        db.get :recorder
       stateChanged $ isnt (theCache.get :state) aState
-    if (or contextChanged stateChanged)
+    if (or recorderChanged stateChanged)
       do
         var newStore $ expand db aState
         var oldStore $ or

@@ -6,12 +6,13 @@ var
   updater $ require :./updater
 
 = exports.commit $ \ (db actionType actionData)
+  db.getIn $ [] :recorder :intial
   var newStore $ ... db
     getIn $ [] :recorder :records
     reduce
       \ (acc action)
         updater acc (action.get 0) (action.get 1)
-      db.get :intial
+      db.getIn $ [] :recorder :initial
   db.update :recorder $ \ (recorder)
     ... recorder
       set :records $ Immutable.List
@@ -40,7 +41,9 @@ var
         records.slice 0 $ + position 1
 
 = exports.record $ \ (db actionType actionData)
-  db.update :recorder $ \ (recorder)
-    ... recorder
-      update :records $ \ (records)
-        records.push $ Immutable.List actionType actionData
+  db.updateIn ([] :recorder :records) $ \ (records)
+    records.push $ Immutable.List $ [] actionType actionData
+
+= exports.switch $ \ (db actionType actionData)
+  db.updateIn ([] :recorder :isTravelling) $ \ (mode)
+    not mode

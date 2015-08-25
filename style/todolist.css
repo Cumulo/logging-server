@@ -1,0 +1,20 @@
+
+.app-todolist {}
+
+.todolist-header {
+  padding: 10px;
+}
+
+.todolist-table {
+  padding: 10px;
+}
+
+.app-task {}
+
+.app-task .task-toggle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-color: hsl(90,10%,90%);
+}

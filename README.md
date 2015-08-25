@@ -1,44 +1,22 @@
 
-Workflow based on Webpack & CirruScript
+Logging Server
 ----
 
-Scaffold for personal projects.
+> Redux-style time travelling debugger, on server-side
 
-### Bash Alias
+![](https://pbs.twimg.com/media/CNRV3H4U8AQLsAI.png:large)
 
-```bash
-# webpack-workflow
-export wf=/Users/chen/repo/mvc-works/webpack-workflow/
-alias workflow="
-cp $wf/gulpfile.* .;
-cp $wf/package.json .;
-cp $wf/webpack.* .;
-cp $wf/template.cirru .;
-cp $wf/.gitignore .;
-cp $wf/.npmignore .;
-cp $wf/README.md .;
-mkdir src/;
-touch src/main.cirru;
-git init;
-"
-```
+This project is an experiment.
 
-### Usage
+The demo requires a server, so I didn't put that online.
 
-* Development
+### Development
 
-```text
-npm i
-gulp html
-webpack-dev-server --hot
-```
+I use `repo` to redirect requests to my Macbook.
+You may need to modify this if you want to update the code.
 
-* Production
-
-```text
-gulp buld
-gulp rsync
-```
+Also read this README before you dig in:
+https://github.com/mvc-works/webpack-workflow
 
 ### License
 

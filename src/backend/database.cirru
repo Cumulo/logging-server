@@ -30,6 +30,8 @@ var _database schema.database
         recorderController.peek db actionType actionData
       :discard
         recorderController.discard db actionType actionData
+      :switch
+        recorderController.switch db actionType actionData
       else
         console.warn $ + ":Unknown action: " actionType
         , db

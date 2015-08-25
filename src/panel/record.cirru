@@ -2,6 +2,7 @@
 var
   React $ require :react
   Immutable $ require :immutable
+  classnames $ require :classnames
 
 var
   view $ require :../frontend/view
@@ -24,11 +25,12 @@ var
       :data this.props.index
 
   :render $ \ ()
-    div ({} (:className :app-record))
-      div
-        {} (:onClick this.onPeek) (:className :record-type)
+    var className $ classnames :app-record $ {}
+      :is-focused this.props.isFocused
+
+    div ({} (:className className) (:onClick this.onPeek))
+      div ({} (:className :record-type))
         this.props.record.get 0
       pre ({} (:className :record-data))
         JSON.stringify
           this.props.record.get 1
-          , null 2

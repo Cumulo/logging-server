@@ -12,6 +12,7 @@ var
 
 var
   div $ React.createFactory :div
+  span $ React.createFactory :span
 
 = module.exports $ React.createClass $ {}
   :displayName :app-container
@@ -26,11 +27,13 @@ var
 
   :render $ \ ()
     div ({} (:className :app-container))
-      div ({} (:className :container-header))
+      div ({} (:className ":container-header line"))
         div
           {} (:className ":app-switcher button is-minor")
             :onClick this.onRoleSwitch
           , ":Switch Role"
+        span ({} (:className :container-role))
+          this.props.store.get :role
       div ({} (:className :container-body))
         cond (is (this.props.store.get :role) :user)
           Todolist $ {} (:tasks $ this.props.store.get :store)

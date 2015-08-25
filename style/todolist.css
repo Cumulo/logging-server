@@ -18,3 +18,7 @@
   vertical-align: middle;
   background-color: hsl(90,10%,90%);
 }
+
+.app-task .task-toggle.is-done {
+  background-color: hsl(240,30%,70%);
+}

@@ -3,7 +3,6 @@ var
   Immutable $ require :immutable
 
 var
-  schema $ require :./schema
   updater $ require :./controller/updater
 
 = module.exports $ \ (db state)
@@ -16,7 +15,7 @@ var
     :store $ cond (is (state.get :role) :user)
       cond (recorder.get :isTravelling)
         ... records
-          slice 0 $ recorder.get :pointer
+          slice 0 $ + (recorder.get :pointer) 1
           reduce
             \ (acc action)
               updater acc (action.get 0) (action.get 1)

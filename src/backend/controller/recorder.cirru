@@ -6,7 +6,6 @@ var
   updater $ require :./updater
 
 = exports.commit $ \ (db actionType actionData)
-  db.getIn $ [] :recorder :intial
   var newStore $ ... db
     getIn $ [] :recorder :records
     reduce
@@ -16,7 +15,7 @@ var
   db.update :recorder $ \ (recorder)
     ... recorder
       set :records $ Immutable.List
-      set :intial newStore
+      set :initial newStore
       set :isTravelling false
 
 = exports.reset $ \ (db actionType actionData)
@@ -45,5 +44,8 @@ var
     records.push $ Immutable.List $ [] actionType actionData
 
 = exports.switch $ \ (db actionType actionData)
-  db.updateIn ([] :recorder :isTravelling) $ \ (mode)
-    not mode
+  db.update :recorder $ \ (recorder)
+    ... recorder
+      update :isTravelling $ \ (mode)
+        not mode
+      set :pointer -1

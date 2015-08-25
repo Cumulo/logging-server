@@ -11,6 +11,7 @@ var
 
 var
   div $ React.createFactory :div
+  span $ React.createFactory :span
 
 = module.exports $ React.createClass $ {}
   :displayName :recorder-controller
@@ -41,8 +42,13 @@ var
   :renderRecords $ \ ()
     ... this.props.recorder
       get :records
-      map $ \ (record index)
-        Record $ {} (:key index) (:record record)
+      map $ \\ (record index)
+        Record $ {} (:key index) (:record record) (:index index)
+          :isFocused $ and
+            is
+              this.props.recorder.get :pointer
+              , index
+            this.props.recorder.get :isTravelling
 
   :render $ \ ()
     div ({} (:className :app-controller))
@@ -52,15 +58,18 @@ var
             :className ":button is-attract"
           , :Commit
         div
-          {} (:onClick this.onCommit)
+          {} (:onClick this.onSwitch)
             :className ":button is-attract"
           , :Switch
         div
-          {} (:onClick this.reset)
+          {} (:onClick this.onReset)
             :className ":button is-danger"
           , :Reset
         div
-          {} (:onClick this.reset)
+          {} (:onClick this.onDiscard)
             :className ":button is-danger"
           , :Discard
-      this.renderRecords
+        span ({} (:className :controller-status))
+          cond (this.props.recorder.get :isTravelling) :isTravelling undefined
+      div ({} (:className :controller-table))
+        this.renderRecords

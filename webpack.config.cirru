@@ -6,14 +6,14 @@ var
 = module.exports $ object
   :entry $ object
     :vendor $ array :react :immutable
-      , :webpack-dev-server/client?http://repo:8080
+      , :webpack-dev-server/client?http://192.168.0.129:8080
       , :webpack/hot/dev-server
     :main $ array :./src/main
 
   :output $ object
     :path :build/
     :filename :[name].js
-    :publicPath :http://repo:8080/build/
+    :publicPath :http://192.168.0.129:8080/build/
 
   :resolve $ object
     :extensions $ array :.js :.cirru :

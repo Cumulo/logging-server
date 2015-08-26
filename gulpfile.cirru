@@ -5,8 +5,8 @@ var
   exec $ . (require :child_process) :exec
   env $ object
     :dev true
-    :main :http://repo:8080/build/main.js
-    :vendor :http://repo:8080/build/vendor.js
+    :main :http://192.168.0.129:8080/build/main.js
+    :vendor :http://192.168.0.129:8080/build/vendor.js
 
 gulp.task :rsync $ \ (cb)
   var
@@ -14,10 +14,10 @@ gulp.task :rsync $ \ (cb)
   wrapper.rsync
     object
       :ssh true
-      :src $ array :index.html :build
+      :src $ array :index.html :build :src :style :package.json :processes.json
       :recursive true
       :args $ array :--verbose
-      :dest :tiye:~/repo/workflow/
+      :dest :aliyun:~/repo/Cumulo/logging-server/
       :deleteAll true
     \ (error stdout stderr cmd)
       if (? error)

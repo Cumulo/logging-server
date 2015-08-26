@@ -1,0 +1,9 @@
+{
+  "name": "logging-server-4003",
+  "cwd": "/home/chen/repo/Cumulo/logging-server",
+  "script": "src/server.cirru",
+  "exec_interpreter": "cirru-script",
+  "env": {
+    "PORT": 4003
+  }
+}

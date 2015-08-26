@@ -4,11 +4,11 @@ Logging Server
 
 > Redux-style time travelling debugger, on server-side
 
+Demo https://github.com/Cumulo/logging-server
+
 ![](https://pbs.twimg.com/media/CNRV3H4U8AQLsAI.png:large)
 
 This project is an experiment.
-
-The demo requires a server, so I didn't put that online.
 
 ### Development
 
